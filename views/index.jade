@@ -3,3 +3,25 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(action="/transaction", method="post")
+    fieldset
+      legend Log a transaction
+      p
+        label(for="date") Date: 
+          input(type="date", name="date")
+      p
+        label(for="acct") Account: 
+          input(type="text", name="acct")
+      p
+        label(for="desc") Description: 
+          input(type="text", name="desc")
+      p
+        label(for="type") Type: 
+          input(type="text", name="type")
+      p
+        label(for="amnt") Amount: 
+          input(type="text", name="amnt")
+      p
+        input(type='submit',value='Submit',data-transition='fade', data-theme='c')
+      success=transtat
+        
